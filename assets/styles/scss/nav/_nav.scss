@@ -1,0 +1,130 @@
+.nav {
+	padding: 0 $global_side-indent;
+	line-height: $nav_height;
+	position: relative;
+
+	&_logo {
+		@include invisible-text;
+		display: inline-block;
+		width: 153px;
+		height: 51px;
+		background: url("#{$path}main-logo.png") no-repeat;
+		vertical-align: middle;
+		margin-right: 10px;
+	}
+	&_icon {
+		@include invisible-text;
+		float: right;
+		width: $nav-icon_size + $global_side-indent * 2;
+		height: $nav-height;
+		background: url("#{$path}menu.svg") no-repeat center center;
+		background-size: $nav-icon_size $nav-icon_size;
+		margin-right: - $global_side-indent;
+
+		@include media($res_tablet) {
+			display: none;
+		}
+
+		&:hover {
+			background-color: rgba(255, 255, 255, .4);
+		}
+	}
+	&_items {
+		display: none;
+		position: absolute;
+		top: $nav_height;
+		left: 0;
+		width: 100%;
+		border-top: 1px solid transparent;
+
+		@include media($res_tablet) {
+			display: block;
+			position: static;
+			width: auto;
+			float: right;
+			margin-right: 50px;
+		}
+
+		&__opened {
+			display: block;
+		}
+	}
+	&_item {
+		display: block;
+		padding: 12px $global_side-indent;
+		font: 15px/18px 'Roboto Condensed', sans-serif;
+		font-weight: bold;
+		color: $text_color;
+		color: rgba(58, 41, 39, .95);
+		text-align: center;
+		text-transform: uppercase;
+		text-decoration: none;
+		background-color: #fff;
+		background-color: rgba(255, 255, 255, .8);
+		transition: background-color .6s ease-in-out;
+
+		@include media($res_tablet) {
+			display: inline-block;
+			background: none;
+			padding: 0;
+			margin: 0 10px;
+			height: $nav_height - 1px;
+			line-height: $nav_height;
+			box-sizing: border-box;
+			border-color: transparent;
+			transition: color .6s ease-in-out;
+		}
+
+		&:hover {
+			background-color: rgba(255, 255, 255, .9);
+
+			@include media($res_tablet) {
+				background-color: transparent;
+				color: #bf0606;
+			}
+		}
+		&__active {
+			color: #bf0606;
+
+			@include media($res_tablet) {
+				color: $text_color;
+				border-bottom: 3px solid $text_color;
+			}
+
+			&:hover {
+				@include media($res_tablet) {
+					color: $text_color;
+				}
+			}
+		}
+		&__lang {
+			@include invisible-text;
+			line-height: 18px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 50px 28px;
+			border: 0 none;
+
+			@include media($res_tablet) {
+				margin: 0;
+				width: 28px;
+				height: 20px;
+				position: absolute;
+				top: 50%;
+				right: $global_side-indent;
+				margin-top: -10px;
+			}
+
+			&:hover {
+				border: 0 none;
+			}
+
+			&-en {
+				background-image: url("#{$path}en.svg");
+			}
+			&-pl {
+				background-image: url("#{$path}pl.svg");
+			}
+		}
+	}
+}

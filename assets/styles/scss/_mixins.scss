@@ -1,0 +1,11 @@
+@mixin invisible-text {
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+
+@mixin media($resolution) {
+	@media all and (min-width: $resolution) {
+		@content;
+	}
+}

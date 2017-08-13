@@ -1,0 +1,7 @@
+p {
+	margin-bottom: 12px;
+
+	@include media($res_tablet) {
+		margin-bottom: 16px;
+	}
+}

@@ -1,0 +1,14 @@
+.two-columns {
+	@include media($res_tablet) {
+		columns: 2;
+	}
+
+	img {
+		width: 100%;
+		margin-bottom: 12px;
+
+		@include media($res_tablet) {
+			margin-bottom: 16px;
+		}
+	}
+}
