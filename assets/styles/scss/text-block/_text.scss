@@ -5,3 +5,13 @@ p {
 		margin-bottom: 16px;
 	}
 }
+
+ul {
+	li {
+		margin-bottom: 12px;
+
+		@include media($res_tablet) {
+			margin-bottom: 16px;
+		}
+	}
+}

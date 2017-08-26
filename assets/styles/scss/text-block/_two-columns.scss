@@ -1,6 +1,9 @@
 .two-columns {
+	margin-bottom: 12px;
+
 	@include media($res_tablet) {
 		columns: 2;
+		margin-bottom: 16px;
 	}
 
 	img {
